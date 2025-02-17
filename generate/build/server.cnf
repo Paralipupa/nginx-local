@@ -1,0 +1,33 @@
+[ v3_req ]
+basicConstraints = CA:FALSE
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = api.qborder.ru
+DNS.2 = docs.qborder.ru
+DNS.3 = docs-v3.qborder.ru
+
+[ req ]
+default_bits       = 4096
+default_md         = sha256
+prompt             = no
+distinguished_name = server_distinguished_name
+req_extensions     = server_req_extensions
+
+[ server_distinguished_name ]
+C  = RU
+ST = Russia
+L  = Moscow
+O  = Home
+OU = IT
+CN = _Local_final
+
+[ server_req_extensions ]
+basicConstraints = critical,CA:false
+keyUsage = critical,nonRepudiation,digitalSignature,keyEncipherment
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = api.local
+DNS.2 = dev.local.ru

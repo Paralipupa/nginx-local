@@ -1,0 +1,20 @@
+[ req ]
+default_bits       = 4096
+default_md         = sha256
+prompt             = no
+encrypt_key        = no
+distinguished_name = intermediate_ca_distinguished_name
+req_extensions     = intermediate_req_extensions
+
+[ intermediate_ca_distinguished_name ]
+C  = RU
+ST = Russia
+L  = Russia
+O  = Home
+OU = Localhost
+CN = _Local_Intermediate
+
+[ intermediate_req_extensions ]
+basicConstraints = critical,CA:true,pathlen:0
+keyUsage = critical,digitalSignature,keyCertSign,cRLSign
+subjectKeyIdentifier = hash

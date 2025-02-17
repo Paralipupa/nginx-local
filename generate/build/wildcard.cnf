@@ -1,0 +1,35 @@
+[ req ]
+default_bits       = 2048
+default_md         = sha256
+prompt             = no
+distinguished_name = req_distinguished_name
+req_extensions     = req_ext
+x509_extensions    = v3_req
+
+[ req_distinguished_name ]
+C  = RU
+ST = Moscow
+L  = Moscow
+O  = Local
+OU = IT
+CN = *.local
+
+[ req_ext ]
+subjectAltName = @alt_names
+
+[ v3_req ]
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid,issuer
+basicConstraints = CA:FALSE
+keyUsage = critical, digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = *.local
+DNS.2 = local
+DNS.3 = *.test.local
+DNS.4 = test.local
+DNS.5 = *.dev.local
+DNS.6 = dev.local
+

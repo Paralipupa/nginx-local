@@ -1,0 +1,10 @@
+certs/*
+html/*
+log/*
+vhost.d/*
+*.crt
+*.key
+*.srl
+*.csr
+*.pem
+default.conf
