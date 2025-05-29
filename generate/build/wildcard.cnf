@@ -26,10 +26,9 @@ extendedKeyUsage = serverAuth
 subjectAltName = @alt_names
 
 [ alt_names ]
-DNS.1 = *.local
-DNS.2 = local
-DNS.3 = *.test.local
-DNS.4 = test.local
-DNS.5 = *.dev.local
-DNS.6 = dev.local
-
+DNS.1 = *.qborder.ru
+DNS.2 = *.qqube.ru
+DNS.3 = *.kodeum.ru
+DNS.4 = *.sm-rso.qqube.ru
+DNS.5 = *.mlg.ru
+DNS.6 = localhost

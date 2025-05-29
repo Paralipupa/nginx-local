@@ -1,4 +1,4 @@
-version: '3.5'
+# version: '3.5'
 
 services:
   nginx:
@@ -16,6 +16,10 @@ services:
 
     labels:
       - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy=true"
+    networks:
+      - default
+      - nginx-proxy
+      # - build_default  # Новая внешняя сеть
 
   dockergen:
     image: jwilder/docker-gen:0.7.3
@@ -31,10 +35,18 @@ services:
       - ./certs:/etc/nginx/certs
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - ./nginx.tmpl:/etc/docker-gen/templates/nginx.tmpl:ro
+    networks:
+      - default
+      - nginx-proxy
+      # - build_default  # Новая внешняя сеть
 
 networks:
+  # Оставляем существующую внешнюю сеть
   default:
+    name: im
+    external: true
+  # Добавляем новую внешнюю сеть
+  nginx-proxy:
     name: nginx-proxy
     external: true
-
 # docker network create --subnet=172.16.0.0/24 nginx-proxy
