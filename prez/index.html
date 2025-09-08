@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Защита технологической практики - Расчет стоимости железнодорожной перевозки</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Navigation Controls -->
+        <div class="navigation">
+            <button class="nav-btn nav-prev" id="prevBtn">‹</button>
+            <div class="slide-indicator">
+                <span id="currentSlide">1</span> / <span id="totalSlides">12</span>
+            </div>
+            <button class="nav-btn nav-next" id="nextBtn">›</button>
+            <button class="fullscreen-btn" id="fullscreenBtn">⛶</button>
+        </div>
+
+        <!-- Slides Container -->
+        <div class="slides-container" id="slidesContainer">
+            
+            <!-- Slide 1: Title -->
+            <div class="slide slide-title active" data-slide="1">
+                <div class="slide-content">
+                    <div class="ministry">МИНИСТЕРСТВО ТРАНСПОРТА РОССИЙСКОЙ ФЕДЕРАЦИИ</div>
+                    <div class="university">РОССИЙСКИЙ УНИВЕРСИТЕТ ТРАНСПОРТА РУТ (МИИТ)</div>
+                    <div class="school">Высшая инженерная школа</div>
+                    
+                    <h1 class="main-title">Расчет стоимости железнодорожной перевозки грузов по сквозному маршруту с учетом тарифных поясов и надбавок</h1>
+                    
+                    <div class="author-info">
+                        <div class="author">Выполнил: <strong>Чипкинеев П.А</strong></div>
+                        <div class="supervisors">
+                            <div>Руководитель практики от университета: <strong>Крутова О.А</strong></div>
+                            <div>Руководитель практики от организации: <strong>Семенов В.А</strong></div>
+                        </div>
+                        <div class="location-year">Москва 2025 г.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Goals and Objectives -->
+            <div class="slide" data-slide="2">
+                <div class="slide-content">
+                    <h2>Цель и задачи практики</h2>
+                    
+                    <div class="goal-section">
+                        <h3>Цель:</h3>
+                        <p>Закрепление и расширение профессиональных навыков разработки IT-решений в транспортно-логистической сфере</p>
+                    </div>
+                    
+                    <div class="tasks-section">
+                        <h3>Задачи:</h3>
+                        <ul class="task-list">
+                            <li>Создание графовой модели сети ОАО «РЖД»</li>
+                            <li>Разработка алгоритма учета тарифных поясов</li>
+                            <li>Реализация механизма корпоративных надбавок</li>
+                            <li>Создание REST API для интеграции</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Problem Relevance -->
+            <div class="slide" data-slide="3">
+                <div class="slide-content">
+                    <h2>Актуальность проблемы</h2>
+                    
+                    <div class="problems-grid">
+                        <div class="problem-card">
+                            <div class="problem-icon">⚡</div>
+                            <h4>Сложность расчетов</h4>
+                            <p>Ручной расчет тарифов ОАО «РЖД» требует глубоких знаний тарифной системы</p>
+                        </div>
+                        <div class="problem-card">
+                            <div class="problem-icon">🔄</div>
+                            <h4>Множество переменных</h4>
+                            <p>Тарифные пояса, надбавки, особые правила проезда через узлы</p>
+                        </div>
+                        <div class="problem-card">
+                            <div class="problem-icon">⚠️</div>
+                            <h4>Риск ошибок</h4>
+                            <p>Высокий риск ошибок при ручном расчете и большие временные затраты</p>
+                        </div>
+                        <div class="problem-card">
+                            <div class="problem-icon">📈</div>
+                            <h4>Потребность в автоматизации</h4>
+                            <p>Необходимость повышения прозрачности и оперативности тарификации</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Subject Domain -->
+            <div class="slide" data-slide="4">
+                <div class="slide-content">
+                    <h2>Предметная область</h2>
+                    
+                    <div class="domain-areas">
+                        <div class="area-item">
+                            <div class="area-icon">🚂</div>
+                            <div>
+                                <h4>Железнодорожные перевозки в России</h4>
+                                <p>Ключевой вид грузового транспорта с высокой провозной способностью</p>
+                            </div>
+                        </div>
+                        <div class="area-item">
+                            <div class="area-icon">💰</div>
+                            <div>
+                                <h4>Тарифная система ОАО «РЖД»</h4>
+                                <p>Сложная система тарификации с учетом поясов и надбавок</p>
+                            </div>
+                        </div>
+                        <div class="area-item">
+                            <div class="area-icon">💻</div>
+                            <div>
+                                <h4>Информационные технологии в транспорте</h4>
+                                <p>Алгоритмы поиска кратчайших путей и веб-разработка</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Developed Solution -->
+            <div class="slide" data-slide="5">
+                <div class="slide-content">
+                    <h2>Разработанное решение</h2>
+                    
+                    <div class="solution-overview">
+                        <div class="solution-main">
+                            <div class="tech-stack">
+                                <div class="tech-item">Python</div>
+                                <div class="tech-item">Django</div>
+                                <div class="tech-item">REST API</div>
+                            </div>
+                        </div>
+                        
+                        <div class="solution-features">
+                            <div class="feature">
+                                <h4>🌐 Веб-приложение</h4>
+                                <p>На платформе Python/Django</p>
+                            </div>
+                            <div class="feature">
+                                <h4>📊 Графовая модель</h4>
+                                <p>Железнодорожной сети в памяти</p>
+                            </div>
+                            <div class="feature">
+                                <h4>🎯 Автоматический расчет</h4>
+                                <p>Расстояний и сроков доставки</p>
+                            </div>
+                            <div class="feature">
+                                <h4>🔗 REST API</h4>
+                                <p>Для интеграции с внешними системами</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: System Architecture -->
+            <div class="slide" data-slide="6">
+                <div class="slide-content">
+                    <h2>Архитектура системы</h2>
+                    
+                    <div class="architecture-diagram">
+                        <div class="arch-layer">
+                            <div class="layer-title">Presentation Layer</div>
+                            <div class="arch-components">
+                                <div class="component">REST API</div>
+                                <div class="component">Django Views</div>
+                            </div>
+                        </div>
+                        
+                        <div class="arch-layer">
+                            <div class="layer-title">Business Logic</div>
+                            <div class="arch-components">
+                                <div class="component">MakeWay Graph</div>
+                                <div class="component">Special Rules</div>
+                                <div class="component">Tariff Calculator</div>
+                            </div>
+                        </div>
+                        
+                        <div class="arch-layer">
+                            <div class="layer-title">Data Layer</div>
+                            <div class="arch-components">
+                                <div class="component">StationScheme</div>
+                                <div class="component">Database</div>
+                                <div class="component">Graph in Memory</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Algorithm -->
+            <div class="slide" data-slide="7">
+                <div class="slide-content">
+                    <h2>Алгоритм расчета маршрута</h2>
+                    
+                    <div class="algorithm-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Инициализация</h4>
+                                <p>Загрузка графа железнодорожной сети в оперативную память</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Поиск базового пути</h4>
+                                <p>Нахождение кратчайшего пути (алгоритм Дейкстры)</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Применение специальных правил</h4>
+                                <p>Учет тарифных узлов и поясов ОАО «РЖД»</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Расчет параметров</h4>
+                                <p>Суммирование расстояний и вычисление сроков доставки</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4>Учет надбавок</h4>
+                                <p>Применение корпоративных надбавок к срокам и стоимости</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Technical Solutions -->
+            <div class="slide" data-slide="8">
+                <div class="slide-content">
+                    <h2>Ключевые технические решения</h2>
+                    
+                    <div class="tech-solutions">
+                        <div class="tech-solution">
+                            <div class="solution-header">
+                                <div class="solution-icon">🔧</div>
+                                <h4>StationScheme</h4>
+                            </div>
+                            <p>Класс для управления графом железнодорожных станций в памяти</p>
+                        </div>
+                        
+                        <div class="tech-solution">
+                            <div class="solution-header">
+                                <div class="solution-icon">⚙️</div>
+                                <h4>Special.py</h4>
+                            </div>
+                            <p>Модуль для учета особых правил проезда через транспортные узлы</p>
+                        </div>
+                        
+                        <div class="tech-solution">
+                            <div class="solution-header">
+                                <div class="solution-icon">🚀</div>
+                                <h4>Предзагрузка данных</h4>
+                            </div>
+                            <p>Загрузка графа в оперативную память для высокой производительности</p>
+                        </div>
+                        
+                        <div class="tech-solution">
+                            <div class="solution-header">
+                                <div class="solution-icon">🛤️</div>
+                                <h4>Алгоритм поиска пути</h4>
+                            </div>
+                            <p>Модифицированный алгоритм Дейкстры для железнодорожной сети</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: Testing -->
+            <div class="slide" data-slide="9">
+                <div class="slide-content">
+                    <h2>Тестирование</h2>
+                    
+                    <div class="testing-types">
+                        <div class="test-type">
+                            <h4>🔬 Модульное тестирование</h4>
+                            <ul>
+                                <li>Тестирование функций расчета надбавок</li>
+                                <li>Проверка специальных правил маршрутизации</li>
+                                <li>Валидация алгоритмов поиска пути</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="test-type">
+                            <h4>🔗 Интеграционное тестирование</h4>
+                            <ul>
+                                <li>Тестирование REST API endpoints</li>
+                                <li>Проверка взаимодействия компонентов</li>
+                                <li>Тестирование полного цикла расчета</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="test-verification">
+                            <h4>✅ Верификация результатов</h4>
+                            <p>Сравнение результатов с внешним сервисом <strong>alta.ru</strong> для подтверждения корректности расчетов</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 10: Efficiency -->
+            <div class="slide" data-slide="10">
+                <div class="slide-content">
+                    <h2>Результаты и эффективность</h2>
+                    
+                    <div class="efficiency-metrics">
+                        <div class="metric-card metric-technical">
+                            <div class="metric-icon">⚡</div>
+                            <h4>Техническая эффективность</h4>
+                            <p>Высокая производительность за счет предзагрузки графа в оперативную память и оптимизированных алгоритмов</p>
+                        </div>
+                        
+                        <div class="metric-card metric-functional">
+                            <div class="metric-icon">🎯</div>
+                            <h4>Функциональная эффективность</h4>
+                            <p>Полное соответствие поставленным задачам и требованиям тарифной системы ОАО «РЖД»</p>
+                        </div>
+                        
+                        <div class="metric-card metric-economic">
+                            <div class="metric-icon">💰</div>
+                            <h4>Экономическая эффективность</h4>
+                            <p>Сокращение трудозатрат, снижение рисков ошибок, повышение прозрачности тарификации</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 11: Conclusion -->
+            <div class="slide" data-slide="11">
+                <div class="slide-content">
+                    <h2>Заключение</h2>
+                    
+                    <div class="conclusion-results">
+                        <div class="result-item">
+                            <div class="result-icon">✅</div>
+                            <p>Успешно реализован сервис автоматизации расчетов железнодорожных перевозок</p>
+                        </div>
+                        
+                        <div class="result-item">
+                            <div class="result-icon">📊</div>
+                            <p>Создана и реализована графовая модель сети ОАО «РЖД»</p>
+                        </div>
+                        
+                        <div class="result-item">
+                            <div class="result-icon">🛤️</div>
+                            <p>Разработан многошаговый алгоритм учета тарифных зон и транспортных узлов</p>
+                        </div>
+                        
+                        <div class="result-item">
+                            <div class="result-icon">🔗</div>
+                            <p>Реализован REST API для интеграции с внешними корпоративными системами</p>
+                        </div>
+                        
+                        <div class="result-item conclusion-final">
+                            <div class="result-icon">🚀</div>
+                            <p><strong>Система готова к промышленному использованию</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 12: Thank You -->
+            <div class="slide slide-thanks" data-slide="12">
+                <div class="slide-content">
+                    <h2>Спасибо за внимание!</h2>
+                    <div class="questions-section">
+                        <div class="questions-icon">❓</div>
+                        <p>Готов ответить на ваши вопросы</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
