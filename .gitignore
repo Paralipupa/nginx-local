@@ -1,5 +1,4 @@
 certs/*
-html/*
 log/*
 vhost.d/*
 *.crt
