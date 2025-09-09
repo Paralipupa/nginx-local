@@ -10,13 +10,11 @@ services:
     ports:
       - "80:80"
       - "443:443"
-      - "8080:8080"
     volumes:
       - ./conf.d:/etc/nginx/conf.d
       - ./snippets:/etc/nginx/snippets:ro
       - ./vhost.d:/etc/nginx/vhost.d
       - ./html:/usr/share/nginx/html
-      # - ./prez:/usr/share/nginx/html/prez:ro
       - ./certs:/etc/nginx/certs
 
     labels:
@@ -47,11 +45,9 @@ services:
       # - build_default  # Новая внешняя сеть
 
 networks:
-  # Оставляем существующую внешнюю сеть
   default:
     name: im
     external: true
-  # Добавляем новую внешнюю сеть
   nginx-proxy:
     name: nginx-proxy
     external: true
