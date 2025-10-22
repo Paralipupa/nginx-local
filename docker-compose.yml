@@ -44,23 +44,23 @@ services:
       - nginx-proxy
       # - build_default  # Новая внешняя сеть
 
-letsencrypt:
-  image: jrcs/letsencrypt-nginx-proxy-companion
-  restart: always
-  container_name: nginx-proxy-le
-  depends_on:
-    - nginx
-    - dockergen
-  environment:
-    NGINX_PROXY_CONTAINER: nginx-proxy
-    NGINX_DOCKER_GEN_CONTAINER: nginx-proxy-gen
-    ACME_CA_URI: https://acme-v02.api.letsencrypt.org/directory
-  volumes:
-    - ./conf.d:/etc/nginx/conf.d
-    - ./vhost.d:/etc/nginx/vhost.d
-    - ./html:/usr/share/nginx/html
-    - ./certs:/etc/nginx/certs
-    - /var/run/docker.sock:/var/run/docker.sock:ro
+  letsencrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    restart: always
+    container_name: nginx-proxy-le
+    depends_on:
+      - nginx
+      - dockergen
+    environment:
+      NGINX_PROXY_CONTAINER: nginx-proxy
+      NGINX_DOCKER_GEN_CONTAINER: nginx-proxy-gen
+      ACME_CA_URI: https://acme-v02.api.letsencrypt.org/directory
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d
+      - ./vhost.d:/etc/nginx/vhost.d
+      - ./html:/usr/share/nginx/html
+      - ./certs:/etc/nginx/certs
+      - /var/run/docker.sock:/var/run/docker.sock:ro
 
 networks:
   default:
