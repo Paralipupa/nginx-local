@@ -5,6 +5,16 @@ prompt             = no
 distinguished_name = req_distinguished_name
 req_extensions     = req_ext
 x509_extensions    = v3_req
+oid_section        = new_oids
+
+[ new_oids ]
+tsa_policy1 = 1.2.3.4.1
+tsa_policy2 = 1.2.3.4.5.6
+ogrn = 1.2.643.100.1
+inn = 1.2.643.3.131.1.1
+innorg = 1.2.643.100.4
+snils = 1.2.643.100.3
+street = 2.5.4.9
 
 [ req_distinguished_name ]
 C  = RU
@@ -29,6 +39,5 @@ subjectAltName = @alt_names
 DNS.1 = *.qborder.ru
 DNS.2 = *.qqube.ru
 DNS.3 = *.kodeum.ru
-DNS.4 = *.sm-rso.qqube.ru
-DNS.5 = *.mlg.ru
-DNS.6 = localhost
+DNS.4 = *.mlg.ru
+DNS.5 = localhost
